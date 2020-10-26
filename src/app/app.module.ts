@@ -11,7 +11,9 @@ import { GestionServicioUsuarioComponent } from './gestion-servicio-usuario/gest
 import { GestionServiciosComponent } from './gestion-servicios/gestion-servicios.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IndexComponent } from './index/index.component';
+import { ConsultaFacturaComponent } from './consulta-factura/consulta-factura.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,16 @@ import { FormsModule } from '@angular/forms';
     ConsultarServicioComponent,
     GestionUsuariosComponent,
     GestionServicioUsuarioComponent,
-    GestionServiciosComponent
+    GestionServiciosComponent,
+    IndexComponent,
+    ConsultaFacturaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

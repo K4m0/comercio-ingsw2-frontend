@@ -1,0 +1,19 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Consultar Servicio</div>
+    <div class="card-body text-primary">
+      <div class="my-2 text-left">
+    
+      </div>
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <div>
+            <label for="email">
+              Email 
+            </label><br>
+            <input id="email" type="text" formControlName="email">
+          </div>
+          <br>
+        <button class="button" type="submit">Consultar</button>
+    </form>
+
+   </div>
+</div>
