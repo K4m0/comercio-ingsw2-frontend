@@ -34,6 +34,4 @@ export class ConsultarServicioComponent implements OnInit {
   getFactura(servicioUsuarioId : number): void{
     this.router.navigate(['/consultar-factura'], {queryParams: {servicioUsuarioId: servicioUsuarioId}});
   }
-
-
 }

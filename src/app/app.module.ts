@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { ConsultaFacturaComponent } from './consulta-factura/consulta-factura.component';
+import { ConsultarFacturaService } from './consulta-factura/consultar-factura.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { ConsultaFacturaComponent } from './consulta-factura/consulta-factura.co
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ConsultarFacturaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
