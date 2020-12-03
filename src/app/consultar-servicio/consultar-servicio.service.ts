@@ -20,7 +20,7 @@ export class ConsultarServicioService {
    }
 
   getServicios(email:string): Observable<ServicioUsuario[]>{
-    return this.http.get<ServicioUsuario[]>(this.servicioUsuarioURLEndpoint + "?Usuario.CorreoUsuario=" + email).pipe( 
+    return this.http.get<ServicioUsuario[]>(this.servicioUsuarioURLEndpoint + "?Usuario.email=" + email).pipe( 
       tap(data =>  
       console.log('All: ' + JSON.stringify(data))) 
     );

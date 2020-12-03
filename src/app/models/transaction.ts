@@ -1,9 +1,10 @@
 import { Comercio } from './comercio';
+import { Estado } from './estado';
 import { Usuario } from './usuario';
 
 export interface Transaction{
     cus?: number;
-    estado? : string;
+    estado? : Estado;
     cliente?: Usuario;
     numeroCuentaDestino?: string;
     numeroCuentaorigen?: string;
@@ -13,4 +14,6 @@ export interface Transaction{
     descripcionPago?: string;
     comercio?: Comercio;
     validar?: string;
+    idTxBanco?: number;
+    idFactura?: number;
 }

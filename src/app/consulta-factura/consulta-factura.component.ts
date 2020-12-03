@@ -7,6 +7,7 @@ import { Factura } from '../models/factura';
 import { Transaction } from '../models/transaction';
 import { ConsultarFacturaService } from './consultar-factura.service';
 import { DOCUMENT } from '@angular/common';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-consulta-factura',
@@ -14,7 +15,7 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./consulta-factura.component.css']
 })
 export class ConsultaFacturaComponent implements OnInit {
-
+  disabled: boolean = true;
   factura: Factura = {};
   private servicioUsuarioId: number;
 
@@ -33,15 +34,38 @@ export class ConsultaFacturaComponent implements OnInit {
     this.getFactura();
   }
 
+  updateFactura(): void{
+    
+    this.facturaService.estadoFactura(this.factura.id).subscribe(
+      fact => {
+        this.factura.Estado_Factura.EstadoPago = fact[fact.length - 1].estado;
+
+        this.facturaService.updateFactura(this.factura).subscribe(
+          updt => console.log(updt)
+        );
+
+        if (this.factura.Estado_Factura.EstadoPago == "SIN PAGAR") {
+          this.disabled = false;
+        }
+      }
+    );
+
+    
+  }
 
   getFactura(): void{
     this.facturaService.getFactura(this.servicioUsuarioId).subscribe(
-      factura => this.factura = factura[0]
+      factura => {
+        this.factura = factura[0];
+        this.updateFactura();
+        
+      }
     );
 
     this.facturaService.gatewayAuthentication(this.auth).subscribe(
       auth => this.auth = auth
     );
+      
     
   }
 

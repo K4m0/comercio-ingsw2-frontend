@@ -17,7 +17,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let usuario of usuarios">
-              <td>{{usuario.NombreUsuario}}</td>
+              <td>{{usuario.nombre}}</td>
               <td><button type="button" name="Ver" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#verModal" (click)="getUsuario(usuario.id)">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
@@ -54,13 +54,13 @@
               <div class="form-group row">
                 <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
                 <div class="col-sm-8">
-                  <input type="text" readonly class="form-control-plaintext" id="nombre" value="{{usuario.NombreUsuario}}">
+                  <input type="text" readonly class="form-control-plaintext" id="nombre" value="{{usuario.nombre}}">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="correo" class="col-sm-4 col-form-label">Correo</label>
                 <div class="col-sm-8">
-                  <input type="text" readonly class="form-control-plaintext" id="correo" value="{{usuario.CorreoUsuario}}">
+                  <input type="text" readonly class="form-control-plaintext" id="correo" value="{{usuario.email}}">
                 </div>
               </div>
             <div class="modal-footer">
@@ -84,13 +84,13 @@
             <div class="form-group row">
               <label for="Mnombre" class="col-sm-4 col-form-label">Nombre</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control-plaintext" id="Mnombre" [(ngModel)]="usuario.NombreUsuario">
+                <input type="text" class="form-control-plaintext" id="Mnombre" [(ngModel)]="usuario.nombre">
               </div>
             </div>
             <div class="form-group row">
               <label for="Mcorreo" class="col-sm-4 col-form-label">Correo</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control-plaintext" id="Mcorreo" [(ngModel)]="usuario.CorreoUsuario">
+                <input type="text" class="form-control-plaintext" id="Mcorreo" [(ngModel)]="usuario.email">
               </div>
             </div>
           <div class="modal-footer">
@@ -112,7 +112,7 @@
           </button>
         </div>
         <div class="modal-body">
-        ¿Estas seguro de eliminar el usuario ? {{usuario.NombreUsuario}}
+        ¿Estas seguro de eliminar el usuario ? {{usuario.nombre}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -135,13 +135,13 @@
           <div class="form-group row">
             <label for="Mnombre" class="col-sm-4 col-form-label">Nombre</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control-plaintext" id="Mnombre" placeholder="Ingrese el nombre del usuario" [(ngModel)]="usuario.NombreUsuario">
+              <input type="text" class="form-control-plaintext" id="Mnombre" placeholder="Ingrese el nombre del usuario" [(ngModel)]="usuario.nombre">
             </div>
           </div>
           <div class="form-group row">
             <label for="Mcorreo" class="col-sm-4 col-form-label">Correo</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control-plaintext" id="Mcorreo" placeholder="Ingrese el correo" [(ngModel)]="usuario.CorreoUsuario">
+              <input type="text" class="form-control-plaintext" id="Mcorreo" placeholder="Ingrese el correo" [(ngModel)]="usuario.email">
             </div>
           </div>
         <div class="modal-footer">
